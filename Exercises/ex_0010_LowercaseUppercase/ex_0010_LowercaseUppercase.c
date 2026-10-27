@@ -12,31 +12,36 @@
 void ex_0010_LowercaseUppercase(void)
 {
     char userChar = 0;
-    bool isValidChar = false;
 
-    // Get the char
+    // Get char from user
+    int status = 0;
+    const int nbExpectedValues = 1;
     do
     {
         printf("Type a letter: ");
-        isValidChar = scanf("%c", &userChar) == 1 ? true : false;
+        status = scanf("%c", &userChar);
 
-        int c;
-        do
         {
-            c = getchar();
-        } while (c != '\n' && c != EOF);
-
-    } while (!isValidChar);
+            int c;
+            do
+            {
+                c = getchar();
+            } while (c != '\n' && c != EOF);
+        }
+    } while (status != nbExpectedValues && status != EOF);
 
     // Interpret char
-    if (userChar >= 97 && userChar <= 122)
+    if (userChar >= 'a' && userChar <= 'z')
     {
         printf("lowercase\n");
-    } else if (userChar >= 65 && userChar <= 90)
+        return;
+    }
+
+    if (userChar >= 'A' && userChar <= 'Z')
     {
         printf("UPPERCASE\n");
-    } else
-    {
-        printf("The character you entered is not a letter.\n");
+        return;
     }
+
+    printf("The character you entered is not a letter.\n");
 }

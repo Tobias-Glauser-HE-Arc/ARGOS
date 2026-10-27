@@ -9,5 +9,16 @@
 // Function definitions
 void ex_0011_MultiplicationSign(void)
 {
-  // TODO: read 2 integers, then print the sign of their product without computing it
+
+    char sign = '>';
+
+    if (number1 == 0 || number2 == 0)
+    {
+        sign = '=';
+    } else if (number1 < 0 ^ number2 < 0) // "^" is XOR
+    {
+        sign = '<';
+    }
+
+    printf("%d * %d %c 0\n", number1, number2, sign);
 }
