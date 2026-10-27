@@ -1,6 +1,8 @@
 BUILD/
 # Student build artifacts (the root argos CLI exe stays tracked)
 Exercises/**/*.exe
+Exercises/.idea
+
 # Per-user state (learning path selection), bootstrapped by the CLI
 .argos-config.json
 
