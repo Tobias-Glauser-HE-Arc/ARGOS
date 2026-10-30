@@ -29,4 +29,64 @@ void ex_0013_SecondOrderEquation(void)
   const char *any_real_solution_message = "Any real is solution of this equation.\n";
 
   // TODO: read coefficients a, b and c, then print the real solutions of the equation
+  double coefA = 0;
+  double coefB = 0;
+  double coefC = 0;
+
+  int status = 0;
+  const int nbExpectedValues = 3;
+  do
+  {
+    printf("%s", usage_message);
+    printf("%s", input_message);
+    status = scanf(" %lf %lf %lf", &coefA, &coefB, &coefC);
+
+    {
+      int c;
+      do
+      {
+        c = getchar();
+      } while (c != '\n' && c != EOF);
+    }
+  } while (status != nbExpectedValues && status != EOF);
+
+  if (coefA == 0 && coefB == 0) {
+    if (coefC == 0)
+    {
+      printf("%s", any_real_solution_message);
+      return;
+    }
+    printf("%s", no_solution_message);
+    return;
+  }
+
+  if (coefA == 0)
+  {
+    printf("%s", linear_solution_message);
+    printf("x = %.4lf\n",
+                0-coefC/coefB);
+    return;
+  }
+
+  double discriminant = pow(coefB,2) - 4*coefA*coefC;
+
+  if (discriminant < 0)
+  {
+    printf("%s", no_real_solution_message);
+    return;
+  }
+
+  if (discriminant == 0)
+  {
+    printf("%s", double_real_solution_message);
+    printf("x = %.4lf\n",
+          0-coefB/(2*coefA));
+    return;
+  }
+
+  printf("%s", two_real_solutions_message);
+  printf("x1 = %.4lf\n"
+          "x2 = %.4lf\n",
+          0-(coefB-sqrt(discriminant))/(2*coefA),
+          0-(coefB+sqrt(discriminant))/(2*coefA));
 }
