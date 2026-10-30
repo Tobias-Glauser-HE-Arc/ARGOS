@@ -11,37 +11,37 @@
 // Function definitions
 void ex_0010_LowercaseUppercase(void)
 {
-    char userChar = 0;
+  char userChar = 0;
 
-    // Get char from user
-    int status = 0;
-    const int nbExpectedValues = 1;
-    do
+  // Get char from user
+  int status = 0;
+  const int nbExpectedValues = 1;
+  do
+  {
+    printf("Type a letter: ");
+    status = scanf("%c", &userChar);
+
     {
-        printf("Type a letter: ");
-        status = scanf("%c", &userChar);
-
-        {
-            int c;
-            do
-            {
-                c = getchar();
-            } while (c != '\n' && c != EOF);
-        }
-    } while (status != nbExpectedValues && status != EOF);
-
-    // Interpret char
-    if (userChar >= 'a' && userChar <= 'z')
-    {
-        printf("lowercase\n");
-        return;
+      int c;
+      do
+      {
+        c = getchar();
+      } while (c != '\n' && c != EOF);
     }
+  } while (status != nbExpectedValues && status != EOF);
 
-    if (userChar >= 'A' && userChar <= 'Z')
-    {
-        printf("UPPERCASE\n");
-        return;
-    }
+  // Interpret char
+  if (userChar >= 'a' && userChar <= 'z')
+  {
+    printf("lowercase\n");
+    return;
+  }
 
-    printf("The character you entered is not a letter.\n");
+  if (userChar >= 'A' && userChar <= 'Z')
+  {
+    printf("UPPERCASE\n");
+    return;
+  }
+
+  printf("The character you entered is not a letter.\n");
 }

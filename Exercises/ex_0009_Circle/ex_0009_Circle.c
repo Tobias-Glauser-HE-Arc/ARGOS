@@ -16,33 +16,32 @@
 // Function definitions
 void ex_0009_Circle(void)
 {
-    double radius = 0;
+  double radius = 0;
 
-    // Get radius from user
-    int status = 0;
-    const int nbExpectedValues = 1;
-    bool validEntry = false;
-    do
+  // Get radius from user
+  int status = 0;
+  const int nbExpectedValues = 1;
+  bool validEntry = false;
+  do
+  {
+    printf("Circle radius: ");
+    status = scanf(" %lf", &radius);
+
     {
-        printf("Circle radius: ");
-        status = scanf(" %lf", &radius);
+      int c;
+      do
+      {
+        c = getchar();
+      } while (c != '\n' && c != EOF);
+    }
 
-        {
-            int c;
-            do
-            {
-                c = getchar();
-            } while (c != '\n' && c != EOF);
-        }
+    validEntry = !(status != nbExpectedValues && status != EOF);
 
-        validEntry = !(status != nbExpectedValues && status != EOF);
+    // Radius must be >= 0
+    validEntry = validEntry && (radius >= 0);
+  } while (!validEntry);
 
-        // Radius must be >= 0
-        validEntry = validEntry && (radius >= 0);
-
-    } while (!validEntry);
-
-    // Print value of pi and circle surface
-    printf("pi = %lf\n", M_PI);
-    printf("Circle surface = %.2lf\n", M_PI * pow(radius, 2));
+  // Print value of pi and circle surface
+  printf("pi = %lf\n", M_PI);
+  printf("Circle surface = %.2lf\n", M_PI * pow(radius, 2));
 }
