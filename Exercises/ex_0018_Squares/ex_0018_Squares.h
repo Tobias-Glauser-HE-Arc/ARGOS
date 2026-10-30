@@ -9,5 +9,7 @@
 // Local includes
 
 // Function prototypes
+int ex_0018_Square(int number);
+bool ex_0018_Squares(int number);
 
 #endif // EX_0018_SQUARES_H
