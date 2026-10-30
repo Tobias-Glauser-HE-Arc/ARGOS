@@ -8,5 +8,8 @@
 // Local includes
 
 // Function prototypes
+void ex_0019_flushStdin(void);
+int ex_0019_Read(int min, int max);
+void ex_0019_MultiplicationTable(int number);
 
 #endif // EX_0019_MULTIPLICATIONTABLE_H
