@@ -8,5 +8,6 @@
 // Local includes
 
 // Function prototypes
+int ex_0022_Invert(int baseNumber);
 
 #endif // EX_0022_INVERT_H
