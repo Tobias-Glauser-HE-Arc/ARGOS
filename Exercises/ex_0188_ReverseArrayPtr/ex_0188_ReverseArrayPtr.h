@@ -8,5 +8,6 @@
 // Local includes
 
 // Function prototypes
+void ex_0188_ReverseArrayPtr(int *source, int *destination, int size);
 
 #endif // EX_0188_REVERSEARRAYPTR_H
