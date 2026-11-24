@@ -7,3 +7,7 @@
 
 // Function definitions
 // TODO: implement ex_0184_DerefModify
+void ex_0184_DerefModify(int *value, int delta)
+{
+  *value += delta;
+}
