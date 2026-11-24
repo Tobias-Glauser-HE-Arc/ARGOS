@@ -8,7 +8,16 @@
 // Local includes
 
 // Types
+typedef struct
+{
+  int hh;
+  int mm;
+  int ss;
+} Time;
 
 // Function prototypes
+Time ex_0029_InitTime(int hh, int mm, int ss);
+void ex_0029_PrintTime(Time time);
+void ex_0029_Time(void);
 
 #endif // EX_0029_TIME_H

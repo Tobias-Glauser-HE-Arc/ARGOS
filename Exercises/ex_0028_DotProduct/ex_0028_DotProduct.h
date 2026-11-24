@@ -8,5 +8,6 @@
 // Local includes
 
 // Function prototypes
+int ex_0028_DotProduct(int uVector[], int vVector[], int vectorSize);
 
 #endif // EX_0028_DOTPRODUCT_H

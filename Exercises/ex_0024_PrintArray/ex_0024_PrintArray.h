@@ -8,5 +8,6 @@
 // Local includes
 
 // Function prototypes
+void ex_0024_PrintArray(int array[], int size);
 
 #endif // EX_0024_PRINTARRAY_H
